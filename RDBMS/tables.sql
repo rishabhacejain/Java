@@ -1,0 +1,51 @@
+CREATE DATABASE RDBMS1;
+USE RDBMS1;
+CREATE TABLE empTableData(Empno INT primary key default 0,
+Ename VARCHAR(10),
+Job VARCHAR(9),
+Mgr INT(4), 
+Hiredate DATE,
+Sal decimal(7,2),
+Comm decimal(7,2),
+Deptno INT(2));
+
+CREATE TABLE DeptTable(Deptno INT PRIMARY KEY Default 0,
+Dname VARCHAR(14),
+Loc VARCHAR(13)
+);
+
+CREATE TABLE StudentTable(RNo INT PRIMARY KEY default 0,
+Sname VARCHAR(14),
+City VARCHAR(20),
+State VARCHAR(20)
+);
+
+
+CREATE TABLE EmpLogTable(Emp_id INT not null,
+Log_date date,
+New_Salary INT,
+Action VARCHAR(20)
+);
+
+INSERT INTO DeptTable VALUES (10, "ACCOUNTING", "NEW YORK"),
+(20, "RESEARCH", "DALLAS"),
+(30, "SALES", "CHICAGO"),
+(40, "OPERATIONS", "BOSTON");
+
+
+INSERT INTO empTableData VALUES(7369,	"SMITH",	"CLERK",  7902,	'1980-12-17',	800,	(NULL), 	20),
+(7499,	"ALLEN",	"SALESMAN", 	7698,	'1981-02-20',	1600,	300,	30),
+(7521,	"WARD", 	 "SALESMAN", 	7698,	'1981-02-22',	1250,	500,	30),
+(7566,	"JONES", 	"MANAGER", 	  7839,	    '1981-04-02',	2975,	(NULL), 	20),
+(7654,	"MARTIN", 	"SALESMAN", 	7698,	'1981-09-28',	1250,	1400,	30),
+(7698,	"BLAKE", 	"MANAGER",  	7839,   '1981-05-01',	2850,	(NULL), 	30),
+(7782,	"CLARK", 	"MANAGER", 	    7839,	'1981-06-09',	2450,	(NULL), 	10),
+(7788,	"SCOTT", 	"ANALYST", 	    7566,	'1987-06-11',	3000,	(NULL), 	20),
+(7839,	"KING", 	"PRESIDENT", 	(NULL), '1981-11-17',	5000,	(NULL), 	10),
+(7844,	"TURNER", 	"SALESMAN", 	7698,	'1981-08-09',	1500,	0,	30),
+(7876,	"ADAMS", 	"CLERK", 	    7788,   '1987-07-13',	1100,	(NULL), 	20),
+(7900,	"JAMES", 	"CLERK", 	    7698,	'1981-03-12',	950, 	(NULL), 	30),
+(7902,	"FORD", 	"ANALYST",   	7566,	'1981-03-12',	3000,	(NULL), 	20),
+(7934,	"MILLER", 	"CLERK", 	    7782,	'1982-01-23',	1300,	(NULL), 	10);
+
+SELECT * FROM empTableData;
